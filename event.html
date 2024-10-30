@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="styles.css"> <!-- Optional Custom Styles -->
+    <title>Event Details</title>
+</head>
+
+<body>
+    <nav class="navbar is-light">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="#">Event Organizers</a>
+            <div class="navbar-burger burger" data-target="navbarMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <div id="navbarMenu" class="navbar-menu">
+            <div class="navbar-end">
+                <a class="navbar-item" href="index.html">Home</a>
+                <a class="navbar-item" href="contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="section">
+        <div class="container">
+            <h1 class="title">Event 1</h1>
+            <figure class="image">
+                <img src="https://via.placeholder.com/800" alt="Event 1" class="is-fullwidth">
+            </figure>
+            <p class="mt-4">Detailed description of Event 1. This section provides more information about what to expect.</p>
+            <p><strong>Date:</strong> July 15, 2024</p>
+            <p><strong>Location:</strong> Event Venue, City, Country</p>
+            <a href="index.html" class="button is-link mt-4">Back to Events</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>&copy; 2024 Event Organizers. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+            if (navbarBurgers.length > 0) {
+                navbarBurgers.forEach(el => {
+                    el.addEventListener('click', () => {
+                        const target = el.dataset.target;
+                        const $target = document.getElementById(target);
+                        el.classList.toggle('is-active');
+                        $target.classList.toggle('is-active');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
